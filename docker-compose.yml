@@ -1,0 +1,20 @@
+version : "3.8"
+services : 
+  fe: 
+    build : ./client
+    ports : 
+      - 3000:3000
+    command: npm start
+
+  be:
+    build : ./api
+    ports :
+      - 3001:3001
+    command : npm start
+
+  db:
+    image : mongo
+    ports : 
+      - 27017:27017
+    
+    

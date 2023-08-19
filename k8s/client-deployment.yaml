@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  selector:
+    matchLabels:
+      app: client-deployment
+  template:
+    metadata:
+      labels:
+        app: client-deployment
+    spec:
+      containers:
+      - name: client-deployment
+        image: ranjana09/frontend
+        resources:
+          limits:
+            memory: "500Mi"
+            cpu: "800m"
+        ports:
+        - containerPort: 3000
